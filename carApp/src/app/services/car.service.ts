@@ -28,4 +28,8 @@ export class CarService {
       ? this.getAllCars()
       : this.getAllCars().filter((car) => car.tags?.includes(tag));
   }
+
+  getCarById(carId: string): Car {
+    return this.getAllCars().find((car) => car.id === carId) ?? new Car();
+  }
 }
