@@ -1,4 +1,5 @@
 import { Car } from './shared/models/carModel';
+import { Tag } from './shared/models/tagModel';
 
 export const sample_cars: Car[] = [
   {
@@ -17,7 +18,7 @@ export const sample_cars: Car[] = [
     price: 78000,
     productionYear: 2017,
     fuelType: ['Petrol'],
-    tags: ['Automatic', 'Fast'],
+    tags: ['Automatic', 'Fast', 'Modern'],
     favourite: true,
     imageUrl: 'assets/mercedes.jpg',
   },
@@ -47,7 +48,7 @@ export const sample_cars: Car[] = [
     price: 78000,
     productionYear: 2017,
     fuelType: ['Petrol'],
-    tags: ['Automatic', 'Fast'],
+    tags: ['Automatic', 'Fast', 'Modern'],
     favourite: true,
     imageUrl: 'assets/mercedes.jpg',
   },
@@ -77,7 +78,7 @@ export const sample_cars: Car[] = [
     price: 78000,
     productionYear: 2017,
     fuelType: ['Petrol'],
-    tags: ['Automatic', 'Fast'],
+    tags: ['Automatic', 'Fast', 'Modern'],
     favourite: true,
     imageUrl: 'assets/mercedes.jpg',
   },
@@ -107,7 +108,7 @@ export const sample_cars: Car[] = [
     price: 78000,
     productionYear: 2017,
     fuelType: ['Petrol'],
-    tags: ['Automatic', 'Fast'],
+    tags: ['Automatic', 'Fast', 'Modern'],
     favourite: true,
     imageUrl: 'assets/mercedes.jpg',
   },
@@ -137,8 +138,15 @@ export const sample_cars: Car[] = [
     price: 78000,
     productionYear: 2017,
     fuelType: ['Petrol'],
-    tags: ['Automatic', 'Fast'],
+    tags: ['Automatic', 'Fast', 'Modern'],
     favourite: true,
     imageUrl: 'assets/mercedes.jpg',
   },
+];
+
+export const sample_tags: Tag[] = [
+  { name: 'All', count: 14 },
+  { name: 'Fast', count: 4 },
+  { name: 'Modern', count: 2 },
+  { name: 'Slow', count: 3 },
 ];
