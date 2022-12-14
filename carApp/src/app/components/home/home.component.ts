@@ -1,6 +1,7 @@
 import { CarService } from './../../services/car.service';
 import { Component } from '@angular/core';
 import { Car } from 'src/app/shared/models/carModel';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,13 @@ import { Car } from 'src/app/shared/models/carModel';
 export class HomeComponent {
   cars: Car[] = [];
 
-  constructor(private carService: CarService) {
-    this.cars = carService.getAllCars();
+  constructor(private carService: CarService, activatedRoute: ActivatedRoute) {
+    activatedRoute.params.subscribe((params) => {
+      if (params.searchTerm) {
+        this.cars = this.carService.getAllCarsBySearchTerm(params.searchTerm);
+      } else {
+        this.cars = carService.getAllCars();
+      }
+    });
   }
 }

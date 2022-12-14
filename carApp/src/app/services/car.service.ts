@@ -11,4 +11,10 @@ export class CarService {
   getAllCars(): Car[] {
     return sample_cars;
   }
+
+  getAllCarsBySearchTerm(search: string) {
+    return this.getAllCars().filter((car) =>
+      car.brand.toLowerCase().includes(search.toLowerCase())
+    );
+  }
 }
