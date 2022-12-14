@@ -1,0 +1,30 @@
+<ul>
+  <li *ngFor="let car of cars">
+    <a routerLink="/food/{{car.id}}">\
+      <img src="{{car.imageUrl}}">
+      <div class="content">
+        <div class="name">
+          {{car.brand}}
+        </div>
+        <span class="favorite {{car.favourite? '': 'not'}}">
+          ♥
+        </span>
+      </div>
+
+      <div class="fuel">
+        <span *ngFor="let fuel of car.fuelType">
+          {{fuel}}
+        </span>
+      </div>
+
+      <div class="product-item-footer">
+        <div class="price">
+          <span>
+            {{car.price | currency}}
+          </span>
+        </div>
+
+      </div>
+    </a>
+  </li>
+</ul>
