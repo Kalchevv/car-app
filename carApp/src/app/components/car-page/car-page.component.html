@@ -1,4 +1,5 @@
-<div class="container">
+<app-not-found [visible]="!car.id" notFound="Car not found" reset="Return to home"></app-not-found>
+<div *ngIf="car.id" class="container">
   <img src="{{car.imageUrl}}" alt="">
 
   <div class="details">

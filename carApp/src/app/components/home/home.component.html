@@ -1,5 +1,6 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found [visible]="!cars || !cars.length" reset="Reset Search"></app-not-found>
 <ul>
   <li *ngFor="let car of cars">
     <a routerLink="/car/{{car.id}}">\
