@@ -13,7 +13,9 @@ export class CarPageComponent {
   constructor(activatedRoute: ActivatedRoute, carService: CarService) {
     activatedRoute.params.subscribe((params) => {
       if (params.id) {
-        this.car = carService.getCarById(params.id);
+        carService.getCarById(params.id).subscribe((serverCars) => {
+          this.car = serverCars;
+        });
       }
     });
   }

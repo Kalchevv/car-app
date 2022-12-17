@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 import { CarPageComponent } from './components/car-page/car-page.component';
 import { HomeComponent } from './components/home/home.component';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'car/:id',
     component: CarPageComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   },
 ];
 

@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { CarService } from './../../services/car.service';
 import { Component } from '@angular/core';
 import { Car } from 'src/app/shared/models/carModel';
@@ -12,14 +13,21 @@ export class HomeComponent {
   cars: Car[] = [];
 
   constructor(private carService: CarService, activatedRoute: ActivatedRoute) {
+    let carsObservable: Observable<Car[]>;
     activatedRoute.params.subscribe((params) => {
       if (params.searchTerm) {
-        this.cars = this.carService.getAllCarsBySearchTerm(params.searchTerm);
+        carsObservable = this.carService.getAllCarsBySearchTerm(
+          params.searchTerm
+        );
       } else if (params.tag) {
-        this.cars = this.carService.getAllCarsByTag(params.tag);
+        carsObservable = this.carService.getAllCarsByTag(params.tag);
       } else {
-        this.cars = carService.getAllCars();
+        carsObservable = carService.getAllCars();
       }
+
+      carsObservable.subscribe((serverCars) => {
+        this.cars = serverCars;
+      });
     });
   }
 }
